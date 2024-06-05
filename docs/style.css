@@ -108,42 +108,33 @@ picture {
     src: url(./assets/fonts/Poppins-Light.ttf);
 }
 
-body {
-    background-color: var(--Very-Light-Gray);
-    font-family: "poppins";
-}
-
 main {
-    max-width: 100%;
+    font-family: "poppins";
+    background-color: var(--Very-Light-Gray);
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    gap: 1rem;
+    grid-template: repeat(12, 1fr) / repeat(11, 1fr);
 }
-
-/* owl selector for margin */
-/* main>*+* {
-    margin-top: var(--margin-1, 1em);
-} */
 
 /* headers */
 h1 {
+    grid-column: 4 / span 5;
+    grid-row: 2 / 3;
     color: var(--Very-Dark-Blue);
     text-align: center;
 }
 
-body h1:nth-child(1) {
+body h1 span {
     font-weight: var(--fw-200);
-    font-size: clamp(1rem, calc(0.8rem + 1vw), 3rem);
+    font-size: var(--fsize-step3);
     font-family: "poppins1";
-    margin-top: var(--margin-4);
-
 }
 
-body h1:nth-child(2) {
+body h1 {
+    font-family: "poppins";
     font-size: var(--fsize-step3);
     font-weight: var(--fw-600);
-    margin-top: 10px;
 }
 
 h2 {
@@ -160,48 +151,52 @@ p:not([class="heading-paragraph"]) {
 }
 
 .heading-paragraph {
+    grid-column: 4 / span 5;
+    grid-row: 3 / 4;
+
     font-size: clamp(0.75rem, calc(0.75rem + 0.1vw), 1rem);
     font-weight: var(--fw-400);
     color: var(--Grayish-Blue);
     text-align: center;
-    max-width: 31rem;
-    margin: var(--margin-1);
-}
 
-/* flexboxes */
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 100rem;
-    margin: 0 auto;
+    margin-bottom: var(--margin-2);
 }
 
 .card {
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
     background-color: white;
-    max-width: 20rem;
     border-radius: 15px;
     text-align: start;
     padding: var(--padding-2);
     box-shadow: 0px 14px 24px -13px var(--Grayish-Blue);
-    margin-left: var(--margin-1);
-    margin-right: var(--margin-1);
-
 }
 
 .card>*+* {
     margin-top: var(--margin-1, 1em);
 }
 
-.karma,
+.sv {
+    grid-column: 2 / span 3;
+    grid-row: 6 / span 4;
+}
+
 .tb {
-    margin-top: var(--margin-2);
-    margin-bottom: var(--margin-2);
+    grid-column: 5 / span 3;
+    grid-row: 4 / span 4;
+}
+
+.karma {
+    grid-column: 5 / span 3;
+    grid-row: 8 / span 4;
+
+}
+
+.calc {
+    grid-column: 8 / span 3;
+    grid-row: 6 / span 4;
 }
 
 .sv::before {
@@ -262,16 +257,8 @@ p:not([class="heading-paragraph"]) {
 
 /* media queries for the breakpoint */
 
-@media (max-width:750px) {
+/* @media (max-width:750px) {
     .main-container {
         flex-direction: column;
     }
-
-    .sv {
-        margin-top: var(--margin-3);
-    }
-
-    .calc {
-        margin-bottom: var(--margin-2);
-    }
-}
+} */
