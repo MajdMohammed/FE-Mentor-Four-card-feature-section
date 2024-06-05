@@ -275,27 +275,9 @@ p:not([class="heading-paragraph"]) {
     }
 
     .card {
+        grid-column: auto;
+        grid-row: auto;
         margin-left: var(--margin-1);
         margin-right: var(--margin-1);
-    }
-
-    .sv {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .tb {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .karma {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .calc {
-        grid-column: 1;
-        grid-row: 4;
     }
 }
